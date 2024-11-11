@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: appme
+  namespace: argocd
+spec:
+  description: Project for all appme applications
+  sourceRepos:
+    - 'https://github.com/morawskiOZ/appme-k8s.git'
+  destinations:
+    - namespace: '*'
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*' 
