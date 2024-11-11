@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: preview-APPME-1
+  name: preview-appme-1
   namespace: appme
 spec:
   project: appme
