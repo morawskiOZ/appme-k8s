@@ -1,13 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
 metadata:
-  name: stage
-  namespace: appme
+  name: kustomize-inline-guestbook
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: appme
   source:
     repoURL: https://github.com/morawskiOZ/appme-k8s.git
-    targetRevision: HEAD
+    targetRevision: main
     path: gitops/apps
     kustomize:
       components:
