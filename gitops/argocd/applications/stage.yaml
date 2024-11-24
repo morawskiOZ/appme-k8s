@@ -11,13 +11,13 @@ spec:
     repoURL: https://github.com/morawskiOZ/appme-k8s.git
     targetRevision: main
     path: gitops/apps
-    kustomize:
-      components:
-        - components/example-app-1
-        - components/example-app-2
-      images:
-        - example-app-1=docker.io/morawskioz/example-app-1:1.0.0
-        - example-app-2=docker.io/morawskioz/example-app-2:1.0.0
+    # kustomize:
+    #   components:
+    #     - components/example-app-1
+    #     - components/example-app-2
+    #   images:
+    #     - example-app-1=docker.io/morawskioz/example-app-1:1.0.0
+    #     - example-app-2=docker.io/morawskioz/example-app-2:1.0.0
   destination:
     namespace: default
     server: 'https://kubernetes.default.svc'
