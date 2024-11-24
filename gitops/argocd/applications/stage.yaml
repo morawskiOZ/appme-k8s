@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 metadata:
   name: kustomize-inline-guestbook
-  namespace: argocd
+  namespace: appme
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
