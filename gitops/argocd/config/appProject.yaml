@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: appme
-  namespace: argocd
+  namespace: appme
 spec:
   description: Project for all appme applications
   sourceRepos:
