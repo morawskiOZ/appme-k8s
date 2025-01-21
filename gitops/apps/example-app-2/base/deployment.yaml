@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: example-app-2
-        image: your-registry/example-app-2:latest
+        image: docker.io/morawskioz/example-app-2:1.0.1
         ports:
         - containerPort: 8080
