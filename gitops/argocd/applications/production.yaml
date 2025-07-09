@@ -10,9 +10,6 @@ spec:
     targetRevision: HEAD
     path: gitops/apps
     kustomize:
-      components:
-        - components/example-app-1
-        - components/example-app-2
       images:
         - example-app-1=docker.io/morawskioz/example-app-1:0.0.1
         - example-app-2=docker.io/morawskioz/example-app-2:1.0.0

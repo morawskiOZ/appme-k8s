@@ -1,24 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kustomize-inline-guestbook
+  name: preview-appme-1
   namespace: appme
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   project: appme
   source:
     repoURL: https://github.com/morawskiOZ/appme-k8s.git
-    targetRevision: main
+    targetRevision: HEAD
     path: gitops/apps
     kustomize:
-     images:
-       - example-app-1=docker.io/morawskioz/example-app-1:1.0.0
-       - example-app-2=docker.io/morawskioz/example-app-2:1.0.0
+      components:
+        - components/example-app-1
+      images:
+        - example-app-1=docker.io/morawskioz/example-app-1:1.0.1
   destination:
     namespace: default
     server: 'https://kubernetes.default.svc'
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true 
+      selfHeal: true
