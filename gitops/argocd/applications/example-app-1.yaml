@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: preview-appme-1
+  namespace: appme
+spec:
+  project: appme
+  source:
+    repoURL: https://github.com/morawskiOZ/appme-k8s.git
+    targetRevision: HEAD
+    path: gitops/apps/example-app-1
+    kustomize:
+      images:
+        - example-app-1=docker.io/morawskioz/example-app-1:1.0.1
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
