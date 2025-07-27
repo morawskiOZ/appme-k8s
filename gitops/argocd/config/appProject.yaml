@@ -5,6 +5,8 @@ metadata:
   namespace: argocd
 spec:
   description: Project for all appme applications
+  sourceNamespaces:
+    - 'appme'
   sourceRepos:
     - 'https://github.com/morawskiOZ/appme-k8s.git'
   destinations:
