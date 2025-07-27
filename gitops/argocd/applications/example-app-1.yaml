@@ -11,7 +11,7 @@ spec:
     path: gitops/apps/example-app-1
     kustomize:
       images:
-        - example-app-1=docker.io/morawskioz/example-app-1:1.0.1
+        - docker.io/morawskioz/example-app-1=docker.io/morawskioz/example-app-1:v1.0.0
   destination:
     namespace: default
     server: 'https://kubernetes.default.svc'
