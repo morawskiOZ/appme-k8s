@@ -2,6 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: example-app-2
+  labels:
+    app.kubernetes.io/name: example-app-2
+    app.kubernetes.io/instance: example-app-2
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/part-of: appme-platform
+    app.kubernetes.io/managed-by: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/hook: Sync
 spec:
   replicas: 1
   selector:
@@ -11,6 +20,10 @@ spec:
     metadata:
       labels:
         app: example-app-2
+        app.kubernetes.io/name: example-app-2
+        app.kubernetes.io/instance: example-app-2
+        app.kubernetes.io/component: backend
+        app.kubernetes.io/part-of: appme-platform
     spec:
       containers:
       - name: example-app-2
