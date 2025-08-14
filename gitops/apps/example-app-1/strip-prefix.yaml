@@ -1,0 +1,9 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+    name: example-app-1-stripprefix
+    namespace: appme
+spec:
+  stripPrefix:
+    prefixes:
+      - /app1
