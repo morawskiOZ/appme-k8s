@@ -14,7 +14,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`argo.appunow.com`) && PathPrefix(`/app1`)
+  - match: Host(`k8s.appunow.com`) && PathPrefix(`/app1`)
     kind: Rule
     middlewares:
     - name: example-app-1-stripprefix
