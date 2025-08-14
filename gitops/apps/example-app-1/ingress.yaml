@@ -21,3 +21,5 @@ spec:
     services:
     - name: example-app-1
       port: 80 
+  tls:
+    secretName: wildcard-example-com-tls
