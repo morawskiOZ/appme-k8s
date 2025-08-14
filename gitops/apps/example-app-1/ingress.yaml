@@ -3,8 +3,6 @@ kind: IngressRoute
 metadata:
   name: example-app-1
 spec:
-  entryPoints:
-    - web
   routes:
   - match: Host(`k8s.appunow.com`) && PathPrefix(`/app1`)
     kind: Rule
