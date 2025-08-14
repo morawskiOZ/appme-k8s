@@ -13,7 +13,7 @@ spec:
       images:
         - docker.io/morawskioz/example-app-2=docker.io/morawskioz/example-app-2:v1.2.0
   destination:
-    namespace: default
+    namespace: appme
     server: 'https://kubernetes.default.svc'
   syncPolicy:
     automated:
