@@ -11,8 +11,10 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 spec:
+  type: ClusterIP
   selector:
     app: example-app-1
   ports:
   - port: 80
+    protocol: TCP
     targetPort: 8080 
