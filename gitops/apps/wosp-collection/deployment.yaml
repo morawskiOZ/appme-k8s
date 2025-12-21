@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wosp-collection
+  labels:
+    app: wosp-collection
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wosp-collection
+  template:
+    metadata:
+      labels:
+        app: wosp-collection
+    spec:
+      containers:
+        - name: wosp-collection
+          image: docker.io/morawskioz/wosp-collection:v1.0.0
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5

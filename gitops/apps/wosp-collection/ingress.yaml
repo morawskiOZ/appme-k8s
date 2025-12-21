@@ -1,0 +1,11 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: wosp-collection
+spec:
+  routes:
+  - match: Host(`k8s.appunow.com`) && PathPrefix(`/wosp`)
+    kind: Rule
+    services:
+    - name: wosp-collection
+      port: 80

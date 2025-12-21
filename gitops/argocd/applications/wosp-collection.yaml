@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: preview-wosp-collection
+  namespace: appme
+spec:
+  project: appme
+  source:
+    repoURL: https://github.com/morawskiOZ/appme-k8s.git
+    targetRevision: HEAD
+    path: gitops/apps/wosp-collection
+    kustomize:
+      images:
+        - docker.io/morawskioz/wosp-collection=docker.io/morawskioz/wosp-collection:v1.0.0
+  destination:
+    namespace: appme
+    server: 'https://kubernetes.default.svc'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
