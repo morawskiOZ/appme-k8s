@@ -4,7 +4,7 @@ metadata:
   name: wosp-collection
 spec:
   routes:
-  - match: Host(`k8s.appunow.com`) && PathPrefix(`/wosp`)
+  - match: Host(`k8s.appunow.com`) && PathPrefix(`/pm2go`)
     kind: Rule
     services:
     - name: wosp-collection

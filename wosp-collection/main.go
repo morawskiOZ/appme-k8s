@@ -25,7 +25,7 @@ type CollectionResponse struct {
 }
 
 func main() {
-	http.HandleFunc("/wosp/collection/latest", handleCollection)
+	http.HandleFunc("/pm2go/test/basicauth", handleCollection)
 	http.HandleFunc("/health", handleHealth)
 
 	log.Printf("Starting wosp-collection server on %s", listenAddr)
