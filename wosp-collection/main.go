@@ -10,7 +10,7 @@ import (
 
 const (
 	baseValue    = 10000
-	hourlyInc    = 1521
+	minuteInc    = 431
 	listenAddr   = ":8080"
 	expectedUser = "manhattan"
 	expectedPass = "manhattan"
@@ -74,6 +74,6 @@ func calculateTotal() int {
 		return baseValue
 	}
 
-	hours := int(elapsed.Hours())
-	return baseValue + (hours * hourlyInc)
+	minutes := int(elapsed.Minutes())
+	return baseValue + (minutes * minuteInc)
 }

@@ -11,7 +11,7 @@ spec:
     path: gitops/apps/wosp-collection
     kustomize:
       images:
-        - docker.io/morawskioz/wosp-collection=docker.io/morawskioz/wosp-collection:v1.3.0
+        - docker.io/morawskioz/wosp-collection=docker.io/morawskioz/wosp-collection:v1.4.0
   destination:
     namespace: appme
     server: 'https://kubernetes.default.svc'
